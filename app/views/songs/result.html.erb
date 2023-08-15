@@ -1,0 +1,25 @@
+<head>
+  <!-- ...その他のリンクやメタ情報... -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<div class="center-both">
+<h1 class="big-title">결과</h1>
+<p><%= params[:name] %>さんにおすすめの5曲は…</p>
+<ul class="no-bullets">
+  <% @songs.each do |song| %>
+    <li><%= song.title %> / <%= song.artist %></li>
+    <%= link_to "MVを見る", song.youtube_url, target: "_blank" %>
+  <% end %>
+</ul>
+<br>
+<strong>꼭 들어보세요!</strong>
+<p>ぜひ聴いてみてください！</p>
+<br>
+<%= link_to "Twitterで共有する", "https://twitter.com/share?url=#{root_url}&text=#{CGI.escape("#{params[:name]}さんにおすすめの5曲は\n#{@songs.map { |s| "#{s.title} / #{s.artist}" }.join("\n")} です！ #나의청춘")}", target: "_blank" %>
+<br>
+<%= link_to "もう一度やってみる", recommend_songs_path %>
+</div>
+

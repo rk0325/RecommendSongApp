@@ -1,0 +1,35 @@
+.center-both {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  flex-direction: column;  /* これを追加 */
+}
+body {
+  font-family: 'Hiragino Maru Gothic Pro', 'ヒラギノ丸ゴシック Pro', 'Hiragino Maru Gothic ProN', 'ヒラギノ丸ゴシック ProN', sans-serif;
+  color: #342314;           /* 茶色 */
+  background-image: url('background.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  z-index: -1;
+}
+
+h1 {
+  font-family: 'Bagel Fat One', 'Cherry Bomb One', 'Zen Maru Gothic', sans-serif;
+}
+
+.center-both {
+  text-align: center; /* 中央揃えにする */
+  /* 他の中央揃えのスタイル（例：flexboxやgrid）も追加することができます */
+}
+
+ul.no-bullets {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.big-title {
+  font-size: 4.5em; /* 例として2.5倍の大きさに設定していますが、好みに合わせて変更してください */
+}
+

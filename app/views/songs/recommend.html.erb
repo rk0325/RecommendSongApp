@@ -1,0 +1,26 @@
+<!-- フォントのリンクをheadタグ内に追加 -->
+<head>
+  <!-- ...その他のリンクやメタ情報... -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&family=Cherry+Bomb+One&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="center-both">
+    <h1 class="big-title">나의 청춘</h1>
+    <strong>이름을 입력하고 오른쪽 버튼을 눌러주세요.</strong>
+    <p>名前を入力して、右のボタンを押してください。</p>
+    <br>
+    <strong>추천해주실 만한 곡 5개를 제안합니다!</strong>
+    <p>おすすめの曲を5つ提案します！</p>
+    <br>
+
+    <%= form_with url: result_songs_path, data: { turbo_method: :post, turbo: "false" } do |form| %>
+      名前：<%= form.text_field :name %>
+      <%= form.submit "가자" %>
+    <% end %>
+  </div>
+</body>
+
+
